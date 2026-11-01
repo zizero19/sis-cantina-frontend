@@ -149,6 +149,159 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+.caixa-painel {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.caixa-formulario {
+  max-width: 600px;
+}
+
+.caixa-formulario fieldset {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.caixa-formulario input,
+.caixa-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.caixa-formulario textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.caixa-formulario textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.pagina-caixa button {
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: #004b8d;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pagina-caixa button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.pagina-caixa :focus-visible {
+  outline: 3px solid #f7941f;
+  outline-offset: 3px;
+}
+
+.pagina-caixa [role="alert"] {
+  color: #b91c1c;
+}
+
+.pagina-caixa [role="status"] {
+  color: #166534;
+}
+
+.caixa-totais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.caixa-totais dt {
+  color: #64748b;
+}
+
+.caixa-totais dd {
+  margin: 6px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.caixa-historico {
+  margin-top: 0;
+}
+
+.caixa-historico-lista {
+  display: grid;
+  gap: 20px;
+}
+
+.caixa-historico-lista .caixa-painel {
+  margin-bottom: 0;
+}
+
+.caixa-card-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.caixa-card-cabecalho h3 {
+  margin: 0;
+}
+
+.caixa-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.caixa-paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.subnavegacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.subnav-link {
+  padding: 12px 18px;
+  border-bottom: 3px solid transparent;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.subnav-link:hover {
+  color: #004b8d;
+  background: #eff6ff;
+}
+
+.subnav-link.active {
+  color: #004b8d;
+  border-bottom-color: #004b8d;
+}
+
 /* Telas menores */
 
 @media (max-width: 768px) {

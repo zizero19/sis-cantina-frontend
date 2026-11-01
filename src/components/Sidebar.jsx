@@ -4,21 +4,22 @@ const menu = [
     {
         titulo: "Geral",
         links: [
-            { nome: "Início", caminho: "/"}
+            { nome: "Início", caminho: "/" }
         ]
     },
     {
         titulo: "Cadastros",
         links: [
-            { nome: "Clientes", caminho: "/clientes"},
-            { nome: "Produtos", caminho: "/produtos"},
-            { nome: "Setores", caminho: "/setores"}
+            { nome: "Clientes", caminho: "/clientes" },
+            { nome: "Produtos", caminho: "/produtos" },
+            { nome: "Setores", caminho: "/setores" }
         ]
     },
     {
         titulo: "Operação",
         links: [
-            { nome: "Pedidos", caminho: "/pedidos" }
+            { nome: "Pedidos", caminho: "/pedidos" },
+            { nome: "Caixa", caminho: "/caixas" },
         ]
     }
 ];
@@ -41,7 +42,7 @@ function Sidebar() {
                                 key={link.caminho}
                                 to={link.caminho}
                                 end={link.caminho === "/"}
-                                className={({ isActive }) => 
+                                className={({ isActive }) =>
                                     isActive ? "menu-link active" : "menu-link"
                                 }
                             >
