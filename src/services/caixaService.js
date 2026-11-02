@@ -1,7 +1,7 @@
-async function requisitar(caminho, opcoes ={}) {
+async function requisitar(caminho, opcoes = {}) {
     const resposta = await fetch(`/api/caixa${caminho}`, opcoes);
 
-    if(resposta.status === 204) {
+    if (resposta.status === 204) {
         return null;
     }
 
@@ -14,7 +14,7 @@ async function requisitar(caminho, opcoes ={}) {
         throw new Error("O servidor retornou uma resposta inesperada");
     }
 
-    if(!resposta.ok) {
+    if (!resposta.ok) {
         const errosCampos = dados?.campos ? Object.values(dados.campos).join(" ") : "";
         throw new Error(errosCampos || dados?.message || dados?.mensagem || `Não foi piossível concluir a operação (${resposta.status})`);
     }
@@ -42,11 +42,25 @@ export function fecharCaixa(id, valorFechamento) {
     });
 }
 
-export function listarCaixasFechados(pagina = 0, tamanho = 10) {
+export function listarCaixasFechados(pagina = 0, tamanho = 10, filtros = {}) {
     const parametros = new URLSearchParams({
         page: String(pagina),
         size: String(tamanho)
     });
+
+    const responsavel = filtros.responsavel?.trim();
+
+    if (responsavel) {
+        parametros.set("responsavel", responsavel);
+    }
+
+    if (filtros.dataInicial) {
+        parametros.set("dataInicial", filtros.dataInicial);
+    }
+
+    if (filtros.dataFinal) {
+        parametros.set("dataFinal", filtros.dataFinal);
+    }
 
     return requisitar(`/fechados?${parametros.toString()}`);
 }
